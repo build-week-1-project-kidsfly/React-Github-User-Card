@@ -39,13 +39,20 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const classes = useStyles();
+
 class UserCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      expanded: false
     };
-    const classes = useStyles();
+  }
+
+  handleExpandClick() {
+    this.setState({
+      expanded: true
+    });
   }
 
   render() {
