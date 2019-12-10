@@ -14,10 +14,12 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // Function that takes in data for user
     function getUserData() {
       return axios.get("https://api.github.com/users/jalba784");
     }
 
+    // Function the takes in data for user's  followers
     function getUserFollowers() {
       return axios.get("https://api.github.com/users/jalba784/followers");
     }
@@ -26,8 +28,12 @@ class App extends Component {
       .all([getUserData(), getUserFollowers()])
       .then(
         axios.spread((uData, fData) => {
-          console.log(uData.data);
-          console.log(fData.data);
+          this.setState({
+            userData: uData.data,
+            followersData: fData.data
+          });
+          console.log(this.state.userData);
+          console.log(this.state.followersData);
         })
       )
       .catch(
