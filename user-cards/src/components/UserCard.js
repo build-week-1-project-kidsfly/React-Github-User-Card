@@ -1,11 +1,20 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const UserCard = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
+class UserCard extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            sdf
+        }
+    }
+
+    render() {
+        return (
+            <div>
+
+            </div>
+        );
+    }
+}
 
 export default UserCard;
