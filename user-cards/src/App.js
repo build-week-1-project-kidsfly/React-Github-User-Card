@@ -4,6 +4,7 @@ import axios from "axios";
 import logo from "./logo.svg";
 import "./App.css";
 import UserCard from "./components/UserCard";
+import ListOfFollowers from "./components/ListOfFollowers";
 
 class App extends Component {
   constructor() {
@@ -49,11 +50,13 @@ class App extends Component {
     return (
       <div className="App">
         <UserCard
-          myPic={this.state.userData.avatar_url}
+          pic={this.state.userData.avatar_url}
           login={this.state.userData.login}
           name={this.state.userData.name}
           location={this.state.userData.location}
+          bio={this.state.userData.bio}
         />
+        <ListOfFollowers followers={this.state.followersData} />
       </div>
     );
   }
